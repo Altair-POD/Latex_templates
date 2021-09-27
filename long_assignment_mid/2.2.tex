@@ -1,0 +1,210 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{cancel}
+\usepackage[thinc]{esdiff}
+\usepackage{parallel}
+\setlength{\parindent}{0em}
+
+\begin{document}
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection.}
+{0.5em}
+{}[\titlerule]
+
+\def\renum{\;\rm I\!R}
+\newcommand{\ncr}[2]{\,^{#1} C _{#2}}
+\newcommand{\npr}[2]{\,^{#1} P _{#2}}
+
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Injectivity:}
+    $$f(x) = \frac{x+1}{x+5}$$
+    Let, $a,\;b\in D_f$ such that $f(a) = f(b)$. If we can prove that a=b then the function is injective, otherwise it is not.
+\begin{eqnarray*}
+    f(a) &=& f(b)\\
+    or,\;\frac{a+1}{a+5} &=& \frac{b+1}{b+5}\\
+    or,\; ab+5a+b+5 &=& ab+5b+a+5\\
+    or,\; 5a-a &=& 5b-b\\
+    \therefore a&=& b
+\end{eqnarray*}
+$\therefore\;f(x)$  is injective.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Surjectivity:}
+\\let,
+\begin{eqnarray*}
+    f(x) &=& y\\
+    x &=& f^{-1}(y)
+\end{eqnarray*}
+now,
+\begin{eqnarray*}
+    y &=& \frac{x+1}{x+5}\\
+    or,\; xy +5y &=& x+1\\
+    or,\; xy-x &=& 1-5y\\
+    or,\; x(y-1)&=& 1-5y\\
+    or,\; x &=& \frac{1-5y}{y-1}\\
+    \therefore f^{-1}(x) &=& \frac{1-5x}{x-1}
+\end{eqnarray*}
+$\therefore \; R_f  = \renum-\{1\}$ \\
+Co-domain $\ne R_f$\\
+$\therefore\; f(x)$ is not surjective.
+\end{minipage}
+
+\vspace{1cm}
+\center{$\therefore f(x)$ is not bijective.}
+\vspace{1cm}
+
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Injectivity:}
+    $$f(x) = \frac{x^2 +1}{x^2+5}$$
+Let, $a,\;b\in D_f$ such that $f(a) = f(b)$. If we can prove that a=b then the function is injective, otherwise it is not.
+\begin{eqnarray*}
+    f(a) &=& f(b\\
+    or,\;\frac{a^2+1}{a^2+5} &=& \frac{b^2+1}{b^2+5}\\
+    or,\; (a^2+1)(b^2+5) &=& (b^2+1)(a^2+5)\\
+    or,\; 5a^2-a^2 &=& 5b^2 - b^2\\
+    or,\; a^2 &=& b^2\\
+    \therefore \; a &=& \pm b
+\end{eqnarray*}
+    $\therefore\;f(x)$ is not injective.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Surjectivity:}
+\\let,
+\begin{eqnarray*}
+    f(x) &=& y\\
+    x &=& f^{-1}(y)
+\end{eqnarray*}
+now,
+\begin{eqnarray*}
+    y &=& \frac{x^2+1}{x^2+5}\\
+    or,\;x^2y+5y &=& x^2+1\\
+    or,\; x^2y-x^2 &=& 1-5y\\
+    or,\;x^2(y-1) &=& 1-5y\\
+    or,\; x &=& \sqrt{\frac{1-5y}{y-1}}
+\end{eqnarray*}
+$\therefore\; R_f = \left[\frac{1}{5}, 1\right)$
+\\Co-domain $\ne\;R_f$
+$\therefore\;f(x)$ is not surjective
+\end{minipage}
+\vspace{1cm}
+\center{$\therefore\;f(x)$is not bijective.}
+\vspace{1cm}
+\newpage
+
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Injectivity:}
+    $$f(x) = x^7 + x^3$$
+Let, $a,\;b\in D_f$ such that $f(a) = f(b)$. If we can prove that a=b then the function is injective, otherwise it is not.
+\begin{eqnarray*}
+    f(a) &=& f(b)\\
+    or,\;a^7+a^3 &=& b^7 + b^3\\
+    \therefore\; a &=& b
+\end{eqnarray*}
+$\therefore\;f(x)$ is injective.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Surjectivity:}
+\\$f(x)$ is defined for all real values of x.\\
+$\therefore\; R_f = \renum$
+\\Co-domain $=R_f$\\
+$\therefore\;f(x)$ is surjective.
+\end{minipage}
+\vspace{1cm}
+\center{$f(x)$ is bijective.}
+\vspace{1cm}
+
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Injectivity:}
+    $$f(x) = x^7 + x^4$$
+Let, $a,\;b\in D_f$ such that $f(a) = f(b)$. If we can prove that a=b then the function is injective, otherwise it is not.
+\begin{eqnarray*}
+    f(a) &=& f(b)\\
+    or,\;a^7+a^4 &=& b^7 + b^4\\
+    \therefore\; a &=& b
+\end{eqnarray*}
+$\therefore\;f(x)$ is injective.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Surjectivity:}
+\\$f(x)$ is defined for all real values of x.\\
+$\therefore\; R_f = \renum$
+\\Co-domain $=R_f$\\
+$\therefore\;f(x)$ is surjective.
+\end{minipage}
+\vspace{1cm}
+\center{$f(x)$ is bijective.}
+\vspace{1cm}
+\newpage
+
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Injectivity:}
+    $$f(x) = \frac{1}{\log{(x)}-1}$$
+Let, $a,\;b\in D_f$ such that $f(a) = f(b)$. If we can prove that a=b then the function is injective, otherwise it is not.
+\begin{eqnarray*}
+    f(a) &=& f(b)\\
+    or,\;\frac{1}{\log{(a)}-1} &=& \frac{1}{\log{(b)}-1}\\
+    or,\; \log(a) &=& \log(b)\\
+    \therefore a&=&b
+\end{eqnarray*}
+    $\therefore\;f(x)$ is injective.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Surjectivity:}
+\begin{eqnarray*}
+    y &=& \frac{1}{\log(x)-1}\\
+    or,\; y\;\log(x)-y &=& 1\\
+    or,\; y\;\log(x) &=& 1+y\\
+    or,\; \log(x) &=& \frac{1+y}{y}\\
+    \therefore x &=& 10^{\frac{1+y}{y}}
+\end{eqnarray*}
+    $\therefore\;R_f = (-\infty, 0)\cup(0,\infty)$\\
+Co-domain $\ne R_f$\\
+    $\therefore\;f(x)$is not surjective.
+\end{minipage}
+\vspace{1cm}
+\center{$f(x)$ is not bijective.}
+\vspace{1cm}
+
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Injectivity:}
+    $$f(x) = e^{3x}$$
+Let, $a,\;b\in D_f$ such that $f(a) = f(b)$. If we can prove that a=b then the function is injective, otherwise it is not.
+\begin{eqnarray*}
+    f(a) &=& f(b)\\
+    or,\;e^{3a} &=& e^{3b}\\
+    or,\;\ln{e^{3a}} &=& \ln{e^{3b}}\\
+    or,\;3a&=&3b\\
+    \therefore a&=&b
+\end{eqnarray*}
+$\therefore\;f(x)$is injective.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.4\linewidth}
+\textbf{Surjectivity:}
+\begin{eqnarray*}
+    y&=&e^{3x}\\
+    or,\;\ln{y} &=& \ln{e^{3x}}\\
+    or,\;\ln{y} &=& 3x\\
+    or,\;x &=& \frac{\ln{y}}{3}
+\end{eqnarray*}
+    $\therefore\;R_f=(0,\infty)$\\ 
+Co-domain $\ne R_f$\\
+    $\therefore\;f(x)$is not surjective.
+\end{minipage}
+
+\vspace{1cm}
+\center{$\therefore\;f(x)$ is not bijective.}
+\vspace{1cm}
+
+
+\end{document}
+
+

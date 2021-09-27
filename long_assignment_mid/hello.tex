@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{cancel}
+\usepackage[thinc]{esdiff}
+\setlength{\parindent}{0em}
+
+\begin{document}
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection.}
+{0.5em}
+{}[\titlerule]
+
+\def\renum{\;\rm I\!R}
+\newcommand{\ncr}[2]{\,^{#1} C _{#2}}
+\newcommand{\npr}[2]{\,^{#1} P _{#2}}
+
+
+\begin{minipage}[c]{0.5\linewidth}
+\textbf{Injectivity:}
+    $$f(x) = \frac{x+1}{x+5}$$
+    Let, $a,\;b\in D_f$ such that $f(a) = f(b)$. If we can prove that a=b then the function is injective, otherwise it is not.
+\begin{eqnarray*}
+    f(a) &=& f(b)\\
+    or,\;\frac{a+1}{a+5} &=& \frac{b+1}{b+5}\\
+    or,\; ab+5a+b+5 &=& ab+5b+a+5\\
+    or,\; 5a-a &=& 5b-b\\
+    \therefore a&=& b
+\end{eqnarray*}
+$\therefore\;f(x)$  is injective.
+\end{minipage}
+\begin{minipage}[c]{0.3\linewidth}
+\textbf{Surjectivity:}
+\\let,
+\begin{eqnarray*}
+    f(x) &=& y\\
+    x &=& f^{-1}(y)
+\end{eqnarray*}
+now,
+\begin{eqnarray*}
+    y &=& \frac{x+1}{x+5}\\
+    or,\; xy +5y &=& x+1\\
+    or,\; xy-x &=& 1-5y\\
+    or,\; x(y-1)&=& 1-5y\\
+    or,\; x &=& \frac{1-5y}{y-1}\\
+    \therefore f^{-1}(x) &=& \frac{1-5x}{x-1}
+\end{eqnarray*}
+$\therefore \; R_f  = \renum-\{1\}$ \\
+Co-domain $\ne R_f$\\
+$\therefore\; f(x)$ is not surjective.
+\end{minipage}
+
+
+
+\end{document}
+
+
+
