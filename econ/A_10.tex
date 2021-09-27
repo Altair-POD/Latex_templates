@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+\usepackage{diagbox}
+
+\begin{document}
+
+\Large{
+    An unbiased coin is tested 3 times. The sample space for the experiment is given below:\\
+    $$s = \left\{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\right\}$$
+
+    Let, number of heads in the last two tests = $X$, where $X=0, 1, 2$
+
+    \hspace{1.75em} number of tails in the last two tests = $Y$, where $Y=0, 1, 2$
+
+    Now,
+
+    \setlength{\tabcolsep}{10pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{center}
+        \begin{tabular}{ c|c|c|c }
+            Sample Point & $X$ & $Y$ & $p(X, Y)$ \\
+            \hline
+            HHH & 2 & 0 & $\frac{1}{8}$\\
+            HHT & 1 & 1 & $\frac{1}{8}$\\
+            HTH & 1 & 1 & $\frac{1}{8}$\\
+            THH & 2 & 0 & $\frac{1}{8}$\\
+            HTT & 0 & 2 & $\frac{1}{8}$\\
+            THT & 1 & 1 & $\frac{1}{8}$\\
+            TTH & 1 & 1 & $\frac{1}{8}$\\
+            TTT & 0 & 2 & $\frac{1}{8}$\\
+        \end{tabular}
+    \end{center}
+
+    Therefore the joint probability distribution of $X$ and $Y$ is drawn below:
+    \setlength{\tabcolsep}{15pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{center}
+        \begin{tabular}{ c|c|c|c|c }
+            \diagbox{$X$}{$Y$} & 0 & 1 & 2 & Row Sum\\
+            \hline
+            0 & 0 & 0 & $\frac{2}{8}$ & $\frac{2}{8}$\\
+            \hline
+            1 & 0 & $\frac{4}{8}$ & 0 & $\frac{4}{8}$\\
+            \hline
+            2 & $\frac{2}{8}$ & 0 & 0 & $\frac{2}{8}$\\
+            \hline
+            Column Sum & $\frac{2}{8}$ & $\frac{4}{8}$ & $\frac{2}{8}$ & 1
+        \end{tabular}
+    \end{center}
+
+
+    Joint probabilities of $X$ and $Y$:
+    $$p\;(X=0, Y=2) = \frac{2}{8}$$
+    $$p\;(X=1, Y=1) = \frac{4}{8}$$
+    $$p\;(X=2, Y=0) = \frac{2}{8}$$
+
+
+
+}
+
+\end{document}
+
+

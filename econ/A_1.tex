@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+\usepackage{diagbox}
+
+\begin{document}
+
+\Large{
+    For an unbiased coin tossed 5 times, let success be denoted by tails.\\
+    let, random variable $x=$ no. of tails.\\
+    $\therefore$ probability of success, $p = 0.5$
+
+    \hspace{1em}Number of trials, $n=5$ \\
+    \begin{eqnarray*}
+        \text{$\therefore$ Probability of 0 tails:} f(x=0) &=& {n \choose x} p^x(1-p)^{n-x}\hspace{10cm}\\
+        &=& {5 \choose 0} 0.5^0 \times (1-0.5)^{5-0}\\
+        &=& \frac{1}{32}
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \text{Probability of 1 tail:} f(x=1) &=& {n \choose x} p^x(1-p)^{n-x}\hspace{10cm}\\
+        &=& {5 \choose 1} 0.5^1 \times (1-0.5)^{5-1}\\
+        &=& {5 \choose 1} \times 0.5 \times 0.5^4\\
+        &=& \frac{5}{32}
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \text{Probability of 2 tails:} f(x=2) &=& {n \choose x} p^x(1-p)^{n-x}\hspace{10cm}\\
+        &=& {5 \choose 2} 0.5^2 \times (1-0.5)^{5-2}\\
+        &=& {5 \choose 2} \times 0.5^2 \times 0.5^3\\
+        &=& \frac{10}{32}
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \text{Probability of 3 tails:} f(x=3) &=& {n \choose x} p^x(1-p)^{n-x}\hspace{10cm}\\
+        &=& {5 \choose 3} 0.5^3 \times (1-0.5)^{5-3}\\
+        &=& {5 \choose 3} \times 0.5^3 \times 0.5^2\\
+        &=& \frac{10}{32}
+    \end{eqnarray*}
+
+    The results are shown below in a graph:
+
+
+}
+\end{document}
+

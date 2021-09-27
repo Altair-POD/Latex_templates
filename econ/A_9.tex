@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+
+\begin{document}
+
+\Large{
+    The continuous that denotes the interval length between the occurrence of events is called exponential random variable. The associated probability function is known as the expnenetial probability function, which is defined as follows -
+    $$f(x) = \frac{1}{\mu}\;e^{-\frac{x}{\mu}};\hspace{1em}\text{for } x\geq 0$$
+    where $\mu=$ expected value or mean\\
+
+    Some real life example of exponential random variable:
+    \begin{itemize}
+        \item Insurers use it to determine the risk of client gettting in an accident.
+        \item To find out the interval between earthquakes.
+        \item To determine the life of electrical devices.
+        \item To determine the interval of getting mails.
+    \end{itemize}
+    \vspace{1em} 
+    Difference between poisson and exponential variable:
+
+    \vspace{1em}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{1em}
+    \begin{center}
+    \begin{tabular}{ |p{7cm}|p{7cm}| }
+        \hline
+        \begin{center}\textbf{POISSON} \end{center}                                                            & \begin{center}\textbf{EXPONENTIAL}\end{center} \\ \hline
+        1. Discreate in nature and defined in integers $x=[0, \infty]$& 1. Continuous in nature and defined on $x=[0, \infty]$\\ \hline
+        2. Deals with the number of occurrences     & 2. Deals with the time between occurrences of continuous successive events\\ \hline 
+        3. Model the number of events in future & 3. Models the wai time until the very first time\\ \hline
+        4. $f(x) = \frac{e^{-m}\cdot m^x}{x!}$  & 4. $f(x) = \frac{1}{\mu}\;e^{-\frac{x}{\mu}}$; for $x \geq 0$ \\ 
+        $m=$ expected value or mean number of occurrences in an interval & $\mu=$ expected value or mean of the interval \\ \hline
+        5. Number people entered in a mall within a period of 5 minutes & 5. Interval between the moments of entry of two individuals\\ \hline
+    \end{tabular}
+    \end{center}
+    
+    
+}
+\end{document}
+

@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+\usepackage{diagbox}
+
+\begin{document}
+
+\Large{
+    We know,\\
+    Expected value of a binomial distribution $E(x)=np$\\
+    Variance of a binomial distribution, $var(x) = np(1-p)$\\
+    According to the question,
+    \begin{eqnarray}
+        np &=& 16\\
+        np(1-p) &=& \frac{16}{5}
+    \end{eqnarray}
+    From (1),
+    \begin{eqnarray}
+        p &=& \frac{16}{n}
+    \end{eqnarray}
+
+    substituting (3) in (2)
+    \begin{eqnarray*}
+        n\cdot\frac{16}{n} \left(1-\frac{16}{n}\right) &=& \frac{16}{5}\\
+        or,\; 16\left(1-\frac{16}{n}\right) &=& \frac{16}{5}\\
+        or,\; 1-\frac{16}{n} &=& \frac{1}{5}\hspace{1cm}\text{[dividing both sides by 16]}\\
+        or,\; 1-\frac{1}{5} &=& \frac{16}{n}\\
+        or,\; \frac{16}{n} &=& \frac{4}{5}\\
+        or,\; 4n &=& 80 \hspace{1cm}\text{[cross-multiplying]}\\
+        or,\; n &=& \frac{80}{4}\\
+        \therefore n &=& 20
+    \end{eqnarray*}
+    $\therefore p = \frac{16}{20} = \frac{4}{5}$ \hspace{1cm}[from (3)]
+
+    $\therefore$ Number of trials, $n = 20$\\
+    Probability of success, $p = \frac{4}{5}$\\
+    Probability of failure, $(1-p) = 1-\frac{4}{5}=\frac{1}{5}$
+    
+}
+\end{document}
+

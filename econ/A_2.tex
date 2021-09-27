@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+
+\begin{document}
+
+\Large{
+    Given statement, ``Two mutally exclusive events are always independtent to each other" is false.\\
+
+    Two events are mutually exclusive if the occurence of one event excludes the occurence of the other. They cannot occur simultaneously and they have no common elements. So $p(A\cap B) = 0$\\
+
+    On the other hand two events are said to be independent if the probability of one occurence is uninfluenced by the other and vice versa.
+    Mathematically, $A$ and $B$ are independent if probability of $A$ given $B$, $p(A|B) = \frac{p(A\cap B)}{p(B)}$ is equal to $p(A)$.a\\
+
+    Let, us take an example of a two coin tosses where getting heads $H$ is one event and getting tails $T$ is other. Since, they can't occur simultaneously they are mutually exclusve, $P(H \cap T) = 0$\\
+
+    \begin{eqnarray*}
+        \text{Now, } &&p(H|T) = \frac{p(H\cap T)}{p(T)} = \frac{0}{\frac{1}{2}} = 0\hspace{10cm}\\
+        &&p(H) = \frac{1}{2}\;\;\;\; \therefore p(H|T) \neq p(H)
+    \end{eqnarray*}
+    \\
+    Thus, mutually exclusive events can be dependent. They can be independent in special case of zero probability of one event.\\
+
+    So, the given statement is false.
+}
+\end{document}
+

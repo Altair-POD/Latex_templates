@@ -1,0 +1,518 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{titlesec}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm, compat=1.16}
+\setlength{\parindent}{0em}
+\usepackage{diagbox}
+\usepackage{float}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    %linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+    linktocpage     %for linking the page number only
+}
+
+
+\begin{document}
+\Large{\tableofcontents}
+\newpage
+
+
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection}
+{0.5em}
+{}[\titlerule]
+
+\renewcommand{\thesection}{Problem No. \arabic{section}}
+
+\titleformat{\subsection}[runin]
+  {\normalfont\Large\bfseries}{(\thesubsection)}{1em}{}
+
+\renewcommand\thesubsection{\roman {subsection}}
+
+\section{}
+
+\Large{
+    For an unbiased coin tossed 5 times, let success be denoted by tails.\\
+    let, random variable $x=$ no. of tails.\\
+    $\therefore$ probability of success, $p = 0.5$
+
+    \hspace{1em}Number of trials, $n=5$ \\
+    \begin{eqnarray*}
+        \text{$\therefore$ Probability of 0 tails:} f(x=0) &=& {n \choose x} p^x(1-p)^{n-x}\hspace{10cm}\\
+        &=& {5 \choose 0} 0.5^0 \times (1-0.5)^{5-0}\\
+        &=& \frac{1}{32}
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \text{Probability of 1 tail:} f(x=1) &=& {n \choose x} p^x(1-p)^{n-x}\hspace{10cm}\\
+        &=& {5 \choose 1} 0.5^1 \times (1-0.5)^{5-1}\\
+        &=& {5 \choose 1} \times 0.5 \times 0.5^4\\
+        &=& \frac{5}{32}
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \text{Probability of 2 tails:} f(x=2) &=& {n \choose x} p^x(1-p)^{n-x}\hspace{10cm}\\
+        &=& {5 \choose 2} 0.5^2 \times (1-0.5)^{5-2}\\
+        &=& {5 \choose 2} \times 0.5^2 \times 0.5^3\\
+        &=& \frac{10}{32}
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \text{Probability of 3 tails:} f(x=3) &=& {n \choose x} p^x(1-p)^{n-x}\hspace{10cm}\\
+        &=& {5 \choose 3} 0.5^3 \times (1-0.5)^{5-3}\\
+        &=& {5 \choose 3} \times 0.5^3 \times 0.5^2\\
+        &=& \frac{10}{32}
+    \end{eqnarray*}
+
+
+    The results are shown below in a graph:
+    
+    \begin{center}
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={$X$},
+                        ylabel={$p\;(X)$},
+                        xmin=0, xmax=4,
+                        ymin=0, ymax=.4,
+                        axis lines=left,
+                    ]
+                    \addplot[ycomb, black, thick, mark=*]table{input.dat};
+                \end{axis}
+            \end{tikzpicture}
+        \caption{Probability Distribution}
+        \end{figure}
+    \end{center}
+
+
+
+}
+
+\newpage
+\section{}
+
+\Large{
+    Given statement, ``Two mutally exclusive events are always independent to each other" is false. For this statement to be true it needs to be the case that
+    no mutually exclusive events are dependent.\\
+
+    Two events are mutually exclusive if the occurence of one event excludes the occurence of the other. They cannot occur simultaneously and they have no common elements. So $p(A\cap B) = 0$\\
+
+    On the other hand two events are said to be independent if the probability of one occurence is uninfluenced by the other and vice versa.
+    Mathematically, $A$ and $B$ are independent if probability of $A$ given $B$, $p(A|B) = \frac{p(A\cap B)}{p(B)}$ is equal to $p(A)$.\\
+
+    Let, us take an example of two coin tosses where getting heads $H$ is one event and getting tails $T$ is other. Since, they can't occur simultaneously they are mutually exclusve, $P(H \cap T) = 0$\\
+
+    \begin{eqnarray*}
+        \text{Now, } &&p(H|T) = \frac{p(H\cap T)}{p(T)} = \frac{0}{\frac{1}{2}} = 0\hspace{10cm}\\
+        &&p(H) = \frac{1}{2}\;\;\;\; \therefore p(H|T) \neq p(H)
+    \end{eqnarray*}
+    \\
+    Thus, mutually exclusive events can be dependent. They can be independent in special case of zero probability of one event.\\
+
+    So, the given statement is false.
+}
+
+\newpage
+\section{}
+\Large{
+    The probability distribution with a random variable that follows the probability
+    distribution function $f(x) = \frac{1}{\sigma\sqrt{2\pi}}\;e^{-\frac{1}{2}}\left(\frac{x-\mu}{\sigma}\right)^2$ is called normal 
+    probability distribution.\\
+
+    While, the distribution of a random variable that has a normal distribution with mean 0 
+    and standard deviation 1 is called standard normal distribution.\\
+
+    The advantages of a standard normal distribution are as follows -
+    \begin{enumerate}[i)]
+        \item The standard normal distribution has a much simpler formula 
+            $f(x) = \frac{1}{\sqrt{2\pi}}\;e^{-\frac{1}{2}}(z)^2$, with a constant mean and variance
+            making it easier to understand.
+
+        \item Using the z-score, we can compare values across different scales and distributions.
+
+        \item Using the standard normal distribution, we can get specific probabilities for values as it is constant.
+
+        \item The standard normal variable $z=\frac{x-\mu}{\sigma}$ can be used to measure the relative location of any value of x over the distribution.
+    \end{enumerate}
+
+    Now, for the standardized normal variable $z=\frac{x-\mu}{\sigma}$\\
+
+    \textbf{\underline{Mean:}}\\
+    \begin{eqnarray*}
+        E(x) &=& E(\frac{x-\mu}{\sigma})\\
+        &=& \frac{1}{\sigma} E(x-\mu)\hspace{1cm}\left[\because E(ax) = a\cdot E(x)\right]\\
+        &=& \frac{1}{\sigma}\left[E(x) - \mu\right]\\
+        &=& \frac{1}{\sigma} [\mu-\mu]\hspace{1cm}\left[\because E(x) = \mu\right]\\
+        &=& \frac{1}{\sigma}\cdot 0 \\
+        &=& 0
+    \end{eqnarray*}
+    $\therefore E(x) = 0$\\
+
+    \newpage
+    \textbf{\underline{Standard deviation:}}\\
+    We know,
+
+    \hspace{4em}Standard deviation $\sigma = \sqrt{\sigma^2} = \sqrt{var(z)}$
+
+    \begin{eqnarray*}
+        var(z) &=& var\left[\frac{x-\mu}{\sigma}\right]\\
+        &=& \frac{1}{\sigma^2}\;var(x-\mu)\hspace{1cm}\left[var(ax) = a^2\;var(x)\right]\\
+        &=& \frac{1}{\sigma^2}\;\left[var(x) + var(\mu)\right]\hspace{1cm}[var(x-y) = var(x)+var(y)]\\
+        &=& \frac{1}{\sigma^2}[\sigma^2 + 0]\hspace{1cm}[\mu = \text{constant}]\\
+        &=& \frac{1}{\sigma^2}\cdot \sigma^2\\
+        &=& 1
+    \end{eqnarray*}
+
+    $\therefore$ standard deviation, $\sigma = \sqrt{var(z)} = \sqrt{1} = 1$
+    
+}
+
+\section{}
+
+\Large{
+    For two continuous random variables $x$ and $y$ the given probability density function:
+    $$f(x,y)=
+    \begin{cases}
+      4xy & 0\leq x\leq 1,\; 0\leq y \leq 1\\
+        0 & \text{otherwise}
+   \end{cases}
+    $$
+
+    Now,\\
+    \begin{eqnarray*}
+        \text{Marginal probability of $x$,}\;g(x) &=& \int_0^1f(x, y)\;dy\\
+        &=& \int_0^1 4xy\;dy\\
+        &=& 4x\int_0^1y\;dy\\
+        &=& 4x\left[\frac{y^2}{2}\right]_0^1\\
+        &=& 4x\left[\frac{1}{2} - \frac{0}{2}\right]\\
+        &=& 2x\hspace{10cm}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+        \therefore \text{probability of $y$ given $x$}, f(y|x) &=& \frac{f(x,y)}{g(x)}\\
+        &=& \frac{4xy}{2x}\\
+        &=& 2y\hspace{10cm}
+    \end{eqnarray*}
+
+    Again,
+    \begin{eqnarray*}
+        \text{Marginal probability of $y$,}\;h(y) &=& \int_0^1f(x,y)\;dx\\
+        &=& \int_0^14xy\;dx\\
+        &=& 4y\int_0^1x\;dx\\
+        &=& 4y\left[\frac{x^2}{2}\right]_0^1\\
+        &=& 4y\left[\frac{1}{2}-\frac{0}{2}\right]\\
+        &=& 2y\hspace{10cm}
+    \end{eqnarray*}
+
+    $\therefore g(x)\;h(y) = 2x\cdot2y=4xy=f(x,y)$\\
+
+    $\therefore x$ and $y$ are statistically independent.
+}
+
+\newpage
+
+\section{}
+
+\Large{
+    \hspace{1.5em}The given data may be expressed in terms of binomial probability. Let the 
+
+    \hspace{1.56em}number of successes be denoted by $x$. \\
+
+    \hspace{1.5em}Here,
+
+    \hspace{1.5em}Success = Employed and Failure = Unemployed
+
+    \hspace{1.5em}Probability of success, $ p = 40\;\% = \frac{40}{100} = 0.4$
+
+    \hspace{1.5em}Number of trials, $n = 20$
+
+    \subsection{}
+    For $x=8$,
+    \begin{eqnarray*}
+        \text{probability of success, } f(x=8)  &=& {n \choose x} p^x (1-p)^{n-x}\hspace{4.5cm}\\
+        &=& {20 \choose 8} 0.4^8\cdot (1-0.4)^{20-8}\\
+        &=& 125970\cdot 0.4^8 \cdot 0.6^{12}\\
+        &=& 0.18 \hspace{1cm}\text{(approx.)}
+    \end{eqnarray*}
+
+    \subsection{}
+    Now,
+
+    \hspace{1.5em}the probability of at least 14 being unemployed is the same as that of at most
+
+    \hspace{1.5em}(20-14) = 6 being employed.
+
+    \hspace{1.5em}The probability of at most 6 being employed is the sum of the probabilities upto
+
+    \hspace{1.5em}x=6 from x=0,
+    \begin{eqnarray*}
+        \text{p(at least 14)} &=& \sum_{x=0}^6 {20 \choose x} \cdot (0.4)^x \; (0.6)^{20-x}\hspace{6.5cm}\\
+        &=& {20 \choose 0} \cdot (0.4)^0\cdot(0.6)^{20} + \dots + {20 \choose 6} (0.4)^6\cdot (0.6)^{14}\\
+        &=& 0.25\hspace{1cm}\text{(approx.)}
+    \end{eqnarray*}
+    \hspace{1.5em}The probability of at least 14 people not getting offer is 0.25
+
+
+}
+\newpage
+
+\section{}
+\renewcommand\thesubsection{\alph {subsection}}
+\Large{
+    \hspace{1.5em}The given daily newspaper data follows a poisson distribution with variance,
+
+    \hspace{1.5em}$var(x)=1.2$ for the number of error occurrences $x$.\\
+
+    \hspace{1.5em}We know,
+
+    \hspace{1.5em}for a poisson probability distribution, $E(x) = var(x) = m$
+
+    \hspace{1.5em}$\therefore$ Expected value or mean number of errors on a page, $m= 1.2$
+
+    \vspace{1cm}
+
+    \subsection{} probability of the number of errors in a page two being 2,
+
+    $$f(x=2) = \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^2}{2!} = 0.217$$
+    \hspace{13cm}(approx.)
+    \vspace{2cm}
+
+    \subsection{} probability of occurrence on page four,
+    \begin{eqnarray*}
+        \text{0 error:} f(x=0) &=& \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^0}{0!} = 0.301 \;\;\;\;\text{(approx.)}\\
+        \text{1 error:} f(x=1) &=& \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^1}{1!} = 0.361 \;\;\;\;\text{(approx.)}\\
+        \text{2 error:} f(x=2) &=& \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^2}{2!} = 0.217 \;\;\;\;\text{(approx.)}\\
+        \text{3 error:} f(x=3) &=& \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^3}{3!} = 0.087 \;\;\;\;\text{(approx.)}\\
+    \end{eqnarray*}
+
+    \hspace{1.5em}$\therefore$ probability of less than 3 or 3 errors on page four,
+    \begin{eqnarray*}
+        f(x \leq 3) &=& 0.301 + 0.361 + 0.217 + 0.087\\
+        &=& 0.966\\
+        &=& 96.6\;\%\hspace{1cm}\text{(approx.)}
+    \end{eqnarray*}
+
+    \newpage
+    \subsection{} Here, mean, $m = 1.2$\\
+
+    \hspace{1.5em}Mean of the number of errors on the first ten pages, $m_1 = 10 \times 1.2 = 12$\\
+
+    \hspace{1.5em}$\therefore$ on the first 10 pages,\\
+    \begin{eqnarray*}
+        \text{probability of total 5 errors: } f(x=5) &=& \frac{e^{-m_1}\cdot m_1^x}{x!}\\
+        &=& \frac{e^{-12}\cdot 12^5}{5!}\\
+        &=& 0.013\hspace{6cm}\\
+        &=& 1.3\;\% \hspace{1cm}\text{(approx.)}
+    \end{eqnarray*}
+
+    \subsection{} Here,
+
+    \hspace{1.5em} Mean no of error per page = 1.2
+
+    \hspace{1.5em} $\therefore$ Mean no of error for 20 pages = 1.2 $\times$ 20 = 24
+    \\
+
+    \hspace{1.5em}Now,
+
+    \hspace{1.5em}the probability of at least 3 errors in 20 pages is the complement of the sum of
+
+    \hspace{1.5em}probabilities upto 2 errors from 0.
+    \begin{eqnarray*}
+        f(x=0) &=& \frac{e^{-24}\cdot 24^0}{0!} = 3.78\times10^{-11}\\
+        f(x=1) &=& \frac{e^{-24}\cdot 24^1}{1!} = 9.06\times10^{-10}\\
+        f(x=2) &=& \frac{e^{-24}\cdot 24^2}{2!} = 1.09\times10^{-8}\\
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \therefore \sum_{x=0}^{2} \frac{e^{-24}\cdot 24^x}{x!} &=& (3.78\times 10^{-11}) + (9.06 \times 10^{-10}) + (1.09 \times 10^{-8})\\
+        &=& 1.2\times 10^{-8}
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \therefore \text{probability of at least 3 errors, } f(\text{at least 3}) &=& 1 - (1.2\times 10^{-8})\\
+        &=& 0.9999999882\\
+        &\approx& 99.99\;\%
+    \end{eqnarray*}
+
+
+
+}
+\newpage
+
+\section{}
+
+\Large{
+    Given, $x$ and $y$ are independent random vaiables. \\
+
+    To be proved: $var (x-y) = var(x) + var(y)$\\
+
+    We know $var(x) = E(x^2)-\mu^2$\\
+
+    let, $E(x)=\mu_1$ and $E(y)=\mu_2$\\
+    \begin{eqnarray*}
+        L.S: var(x-y) &=& E\left\{(x-y)^2\right\} -\left[E(x-y)\right]^2\\\\
+        &=& E\left\{x^2-2xy+y^2\right\}-\left[E(x)-E(y)\right]^2\\\\
+        &=& E(x^2) - 2E(xy) + E(y^2)- [\mu_1 - \mu_2]^2\\\\
+        && \hspace{3cm}\text{[substituting $E(x)=\mu_1$ and $E(y)=\mu_2$]}\\\\
+        &=& E(x^2) - 2E(x)\cdot E(y)+ E(y^2)-\left(\mu_1^2 - 2\mu_1\mu_2 + \mu_2^2\right)\\\\
+        && \hspace{3cm}\text{[using $E(xy)=E(x).E(y)$]}\\\\
+        &=& E(x^2)-2\mu_1\mu_2+E(y^2)-\mu_1^2+2\mu_1\mu_2 -\mu_2^2\\\\
+        && \hspace{3cm}\text{[using $E(x)=\mu_1$ and $E(y)= \mu_2$]}\\\\
+        &=& E(x^2)-\mu_1^2+E(y^2)-\mu_2^2\\\\
+        &=& var(x)+var(y) \hspace{1cm}\text{[from variance formula]}\\\\
+        &=& R.S
+    \end{eqnarray*}
+
+$\therefore var(x-y) = var(x) + var(y)$\\
+
+\hspace{7cm}[Proved]
+
+}
+\newpage
+\section{}
+\Large{
+    We know,\\
+    Expected value of a binomial distribution $E(x)=np$\\
+    Variance of a binomial distribution, $var(x) = np(1-p)$\\
+    According to the question,
+    \begin{eqnarray}
+        np &=& 16\\
+        np(1-p) &=& \frac{16}{5}
+    \end{eqnarray}
+    From (1),
+    \begin{eqnarray}
+        p &=& \frac{16}{n}
+    \end{eqnarray}
+
+    substituting (3) in (2)
+    \begin{eqnarray*}
+        n\cdot\frac{16}{n} \left(1-\frac{16}{n}\right) &=& \frac{16}{5}\\
+        or,\; 16\left(1-\frac{16}{n}\right) &=& \frac{16}{5}\\
+        or,\; 1-\frac{16}{n} &=& \frac{1}{5}\hspace{1cm}\text{[dividing both sides by 16]}\\
+        or,\; 1-\frac{1}{5} &=& \frac{16}{n}\\
+        or,\; \frac{16}{n} &=& \frac{4}{5}\\
+        or,\; 4n &=& 80 \hspace{1cm}\text{[cross-multiplying]}\\
+        or,\; n &=& \frac{80}{4}\\
+        \therefore n &=& 20
+    \end{eqnarray*}
+    \\
+    $\therefore p = \frac{16}{20} = \frac{4}{5}$ \hspace{1cm}[from (3)]\\
+
+    $\therefore$ Number of trials, $n = 20$\\
+
+    Probability of success, $p = \frac{4}{5}$\\
+
+    Probability of failure, $(1-p) = 1-\frac{4}{5}=\frac{1}{5}$
+
+}
+\newpage
+\section{}
+\Large{
+    The continuous random variable that denotes the interval length between the occurrence of events is called exponential random variable. The associated probability function is known as the exponential probability function, which is defined as follows -
+    $$f(x) = \frac{1}{\mu}\;e^{-\frac{x}{\mu}};\hspace{1em}\text{for } x\geq 0$$
+    where $\mu=$ expected value or mean\\
+
+    Some real life example of exponential random variable:
+    \begin{itemize}
+        \item Insurers use it to determine the risk of a client getting in an accident.
+        \item To find out the interval between earthquakes.
+        \item To determine the life of electrical devices.
+        \item To determine the interval of getting mails.
+    \end{itemize}
+    \vspace{1em} 
+    Difference between poisson and exponential variable:
+
+    \vspace{1em}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{1em}
+    \begin{center}
+    \begin{tabular}{ |p{7cm}|p{7cm}| }
+        \hline
+        \begin{center}\textbf{POISSON} \end{center}                                                            & \begin{center}\textbf{EXPONENTIAL}\end{center} \\ \hline
+        1. Discrete in nature and defined in integers $x=[0, \infty)$& 1. Continuous in nature and defined on $x=[0, \infty)$\\ \hline
+        2. Deals with the number of occurrences     & 2. Deals with the time between occurrences of continuous successive events\\ \hline 
+        3. Models the number of events in future & 3. Models the wait time until the very first time\\ \hline
+        4. $f(x) = \frac{e^{-m}\cdot m^x}{x!}$  & 4. $f(x) = \frac{1}{\mu}\;e^{-\frac{x}{\mu}}$; for $x \geq 0$ \\ 
+        $m=$ expected value or mean number of occurrences in an interval & $\mu=$ expected value or mean of the interval \\ \hline
+        5. Number people entered in a mall within a period of 5 minutes & 5. Interval between the moments of entry of two individuals\\ \hline
+    \end{tabular}
+    \end{center}
+    
+    
+}
+
+\section{}
+
+\Large{
+    An unbiased coin is tossed 3 times. The sample space for the experiment is given below:\\
+    $$s = \left\{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\right\}$$\\
+
+    Let, number of heads in the last two tosses = $X$, where $X=0, 1, 2$
+
+    \hspace{1.75em} number of tails in the last two tosses = $Y$, where $Y=0, 1, 2$\\
+
+    Now,\\
+
+    \setlength{\tabcolsep}{10pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{center}
+        \begin{tabular}{ c|c|c|c }
+            Sample Point & $X$ & $Y$ & $p(X, Y)$ \\
+            \hline
+            HHH & 2 & 0 & $\frac{1}{8}$\\
+            HHT & 1 & 1 & $\frac{1}{8}$\\
+            HTH & 1 & 1 & $\frac{1}{8}$\\
+            THH & 2 & 0 & $\frac{1}{8}$\\
+            HTT & 0 & 2 & $\frac{1}{8}$\\
+            THT & 1 & 1 & $\frac{1}{8}$\\
+            TTH & 1 & 1 & $\frac{1}{8}$\\
+            TTT & 0 & 2 & $\frac{1}{8}$\\
+        \end{tabular}
+    \end{center}
+
+    \newpage
+    Therefore the joint probability distribution of $X$ and $Y$ is drawn below:
+    \setlength{\tabcolsep}{15pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{center}
+        \begin{tabular}{ c|c|c|c|c }
+            \diagbox{$X$}{$Y$} & 0 & 1 & 2 & Row Sum\\
+            \hline
+            0 & 0 & 0 & $\frac{2}{8}$ & $\frac{2}{8}$\\
+            \hline
+            1 & 0 & $\frac{4}{8}$ & 0 & $\frac{4}{8}$\\
+            \hline
+            2 & $\frac{2}{8}$ & 0 & 0 & $\frac{2}{8}$\\
+            \hline
+            Column Sum & $\frac{2}{8}$ & $\frac{4}{8}$ & $\frac{2}{8}$ & 1
+        \end{tabular}
+    \end{center}
+
+
+    Joint probabilities of $X$ and $Y$:
+    $$p\;(X=0, Y=2) = \frac{2}{8}$$
+    $$p\;(X=1, Y=1) = \frac{4}{8}$$
+    $$p\;(X=2, Y=0) = \frac{2}{8}$$
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

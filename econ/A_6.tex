@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+\usepackage{diagbox}
+
+\begin{document}
+\titleformat{\section}
+{\Large\bfseries}
+{Problem No. \thesection}
+{0.5em}
+{}
+
+\titleformat{\subsection}[runin]
+  {\normalfont\Large\bfseries}{(\thesubsection)}{1em}{}
+
+\renewcommand\thesubsection{\alph {subsection}}
+
+\Large{
+    \hspace{1.5em}The given daily newspaper data follows a poison distribution with variance, 
+
+    \hspace{1.5em}$var(x)=1.2$ for the number of error occurrences $x$.\\
+
+    \hspace{1.5em}We know,
+
+    \hspace{1.5em}for a poison probability distribution, $E(x) = var(x) = m$
+
+    \hspace{1.5em}$\therefore$ Expected value or mean number of errors on a page, $m= 1.2$
+
+    \subsection{} probility of the number of errors in a page two being 2,
+
+    $$f(x=2) = \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-12}\cdot (1.2)^2}{2!} = 0.217$$ 
+    \hspace{13cm}(approx.)
+    
+    \subsection{} probability of occurrence on page four,
+    \begin{eqnarray*}
+        \text{0 error:} f(x=0) &=& \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^0}{0!} = 0.301 \;\;\;\;\text{(approx.)}\\
+        \text{1 error:} f(x=1) &=& \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^1}{1!} = 0.361 \;\;\;\;\text{(approx.)}\\
+        \text{2 error:} f(x=2) &=& \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^2}{1!} = 0.217 \;\;\;\;\text{(approx.)}\\
+        \text{3 error:} f(x=3) &=& \frac{e^{-m}\cdot m^x}{x!} = \frac{e^{-1.2}\cdot (1.2)^3}{3!} = 0.087 \;\;\;\;\text{(approx.)}\\
+    \end{eqnarray*}
+
+    \hspace{1.5em}$\therefore$ probability of less than 3 or 3 errors on page four,
+    \begin{eqnarray*}
+        f(x \leq 3) &=& 0.301 + 0.361 + 0.217 + 0.087\\
+        &=& 0.966\\
+        &=& 96.6\;\%\hspace{1cm}\text{(approx.)}
+    \end{eqnarray*}
+
+    \subsection{} Here, mean, $m = 1.2$\\
+
+    \hspace{1.5em}Mean of the number of errors on the first ten pages, $m_1 = 10 \times 1.2 = 12$\\
+
+    \hspace{1.5em}$\therefore$ on the first 10 pages,\\
+    \begin{eqnarray*}
+        \text{probability of total 5 errors: } f(x=5) &=& \frac{e^{-m}\cdot m_1^x}{x!}\\
+        &=& \frac{e^{-12}\cdot 12^5}{5!}\\
+        &=& 0.013\hspace{6cm}\\
+        &=& 1.3\;\% \hspace{1cm}\text{(approx.)}
+    \end{eqnarray*}
+
+    \subsection{} Here,
+
+    \hspace{1.5em} Mean no of error per page = 1.2
+
+    \hspace{1.5em} $\therefore$ Mean no of error for 20 pages = 1.2 $\times$ 20 = 24
+    \\
+
+    \hspace{1.5em}Now,
+
+    \hspace{1.5em}the probability of at least 3 errors in 20 pages is the complement of the sum of 
+
+    \hspace{1.5em}probabilities upto 2 errors from 0.
+    \begin{eqnarray*}
+        f(x=0) &=& \frac{e^{-24}\cdot 24^0}{0!} = 3.78\times10^{-11}\\
+        f(x=1) &=& \frac{e^{-24}\cdot 24^1}{1!} = 9.06\times10^{-10}\\
+        f(x=2) &=& \frac{e^{-24}\cdot 24^2}{2!} = 1.09\times10^{-8}\\
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \therefore \sum_{x=0}^{2} \frac{e^{-24}\cdot 24^x}{x!} &=& (3.78\times 10^{-11}) + (9.06 \times 10^{-10}) + (1.09 \times 10^{-8})\\
+        &=& 1.2\times 10^{-8}
+    \end{eqnarray*}
+    \begin{eqnarray*}
+        \therefore \text{probability of at least 3 errors, } f(\text{at least 3}) &=& 1 - (1.2\times 10^{-8})\\
+        &=& 0.9999999882\\
+        &\approx& 99.99\;\%
+    \end{eqnarray*}
+
+
+
+}
+\end{document}

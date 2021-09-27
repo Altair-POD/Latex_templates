@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+\usepackage{enumerate}
+
+\begin{document}
+
+\Large{
+    The probability distribution with a random variable that follows the probability
+    distribution function $f(x) = \frac{1}{\sigma\sqrt{2\pi}}\;e^{-\frac{1}{2}}\left(\frac{x-\mu}{\sigma}\right)^2$ is called normal 
+    probability distribution.\\
+
+    While, the distribution of a random variable that has a normal distribution with mean 0 
+    and standard deviation 1 is called standard normal distribution.\\
+
+    The advantages of a standard normal distribution are as follows -
+    \begin{enumerate}[i)]
+        \item The standard normal distribution has a much simpler formula 
+            $f(x) = \frac{1}{\sqrt{2\pi}}\;e^{-\frac{1}{z}}(z)^2$, with a constant mean and variance
+            making it easier to understand.
+
+        \item Using the z-score, we can compare values across different scales and distributions.
+
+        \item Using the standard normal distribution, we can get specific probabilities for values as it is constant.
+
+        \item The standard normal variable $z=\frac{x-\mu}{\sigma}$ can be used to measure the relative location of any value of x over the distribution.
+    \end{enumerate}
+
+    Now, for the standardized normal variable $z=\frac{x-\mu}{\sigma}$\\
+
+    \textbf{\underline{Mean:}}\\
+    \begin{eqnarray*}
+        E(x) &=& E(\frac{x-\mu}{\sigma})\\
+        &=& \frac{1}{\sigma} E(x-\mu)\hspace{1cm}\left[E(ax) = a\cdotE(x)\right]\\
+        &=& \frac{1}{\sigma}\left[E(x) - \mu\right]\\
+        &=& \frac{1}{\sigma} [\mu-\mu]\hspace{1cm}\left[E(x) = \mu\right]\\
+        &=& \frac{1}{\sigma}\cdot 0 \\
+        &=& 0
+    \end{eqnarray*}
+    $\therefore E(x) = 0$\\
+
+    \newpage
+    \textbf{\underline{Standard deviation:}}\\
+    We know,
+
+    \hspace{4em}Standard deviation $\sigma = \sqrt{\sigma^2} = \sqrt{var(z)}$
+
+    \begin{eqnarray*}
+        var(z) &=& var\left[\frac{x-\mu}{\sigma}\right]\\
+        &=& \frac{1}{\sigma^2}\;var(x-\mu)\hspace{1cm}\left[var(ax) = a^2\;var(x)\right]\\
+        &=& \frac{1}{\sigma^2}\;\left[var(x) + var(\mu)\right]\hspace{1cm}[var(x-y) = var(x)+var(y)]\\
+        &=& \frac{1}{\sigma^2}[\sigma^2 + 0]\hspace{1cm}[\mu = \text{constant}]\\
+        &=& \frac{1}{\sigma^2}\cdot \sigma^2\\
+        &=& 1
+    \end{eqnarray*}
+
+    $\therefore$ standard deviation, $\sigma = \sqrt{var(z)} = \sqrt{1} = 1$
+    
+
+\end{document}

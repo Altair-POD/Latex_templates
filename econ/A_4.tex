@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+\usepackage{diagbox}
+
+\begin{document}
+
+\large{
+    For two continuous random variables $x$ and $y$ the given probability density function:
+    $$f(x,y)=
+    \[ \begin{cases}
+      4xy & 0\leq x\leq 1,\; 0\leq y \leq 1\\
+        0 & \text{otherwise}
+   \end{cases}
+    \]
+    $$
+
+    Now,\\
+    \begin{eqnarray*}
+        \text{Marginal probability of $x$,}\;g(x) &=& \int_0^1f(x, y)\;dy\\
+        &=& \int_0^1 4xy\;dy\\
+        &=& 4x\int_0^1y\;dy\\
+        &=& 4x\left[\frac{y^2}{2}\right]_0^1\\
+        &=& 4x\left[\frac{1}{2} - \frac{0}{2}\right]\\
+        &=& 2x\hspace{10cm}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+        \therefore \text{probability of $y$ given $x$}, f(y|x) &=& \frac{f(x,y)}{g(x)}\\
+        &=& \frac{4xy}{2x}\\
+        &=& 2y\hspace{10cm}
+    \end{eqnarray*}
+
+    Again,
+    \begin{eqnarray*}
+        \text{Marginal probability of $y$,}\;h(y) &=& \int_0^1f(x,y)\;dx\\
+        &=& \int_0^14xy\;dx\\
+        &=& 4y\int_0^1x\;dx\\
+        &=& 4y\left[\frac{x^2}{2}\right]_0^1\\
+        &=& 4y\left[\frac{1}{2}-\frac{0}{2}\right]\\
+        &=& 2y\hspace{10cm}
+    \end{eqnarray*}
+
+    $\therefore g(x)\;h(y) = 2x\cdot2y=4xy=f(x,y)$\\
+    $\therefore x$ and $y$ are statistically independent. 
+}
+
+\end{document}

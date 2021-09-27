@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+
+\begin{document}
+
+\Large{
+    Given, $x$ and $y$ are independent random vaiables. \\
+    To be proved: $var (x-y) = var(x) + var(y)$\\
+    We know $var(x) = E(x^2)-\mu^2$\\
+    at $E(x),\;\mu_1$ and $E(y),\;\mu_2$\\
+    \begin{eqnarray*}
+        L.S: var(x-y) &=& E\left\{(x-y)^2\right\} -\left[E(x-y)\right]^2\\
+        &=& E\left\{x^2-2xy+y^2\right\}-\left[E(x)-E(y)\right]^2\\
+        &=& E(x^2) - 2E(xy) + E(y^2)- [\mu_1 - \mu_2]^2\\
+        && \hspace{3cm}\text{[substituting $E(x),\;\mu_1$ and $E(y),\;\mu_2$]}\\
+        &=& E(x^2) - 2E(x)\cdot E(y)+ E(y^2)-\left(\mu_1^2 - 2\mu_1\mu_2 + \mu_2^2\right)\\
+        && \hspace{3cm}\text{[using $E(xy)=E(x).E(y)$]}\\
+        &=& E(x^2)-2\mu_1\mu_2+E(y^2)-\mu_1^2+2\mu_1\mu_2 -\mu_2^2\\
+        && \hspace{3cm}\text{[using $E(x)=\mu_1$ and $E(y)= \mu_2$]}\\
+        &=& E(x^2)-\mu_1^2+E(y^2)-\mu_2^2\\
+        &=& var(x)+var(y) \hspace{1cm}\text{[from variance formula]}\\
+        &=& R.S
+    \end{eqnarray*}
+
+$\therefore var(x-y) = var(x) + var(y)$\\
+
+\hspace{7cm}[Proved]
+
+}
+\end{document}

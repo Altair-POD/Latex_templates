@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[thinc]{esdiff}
+\usepackage{cancel}
+\usepackage{titlesec}
+\setlength{\parindent}{0em}
+\usepackage{diagbox}
+
+\begin{document}
+\titleformat{\section}
+{\Large\bfseries}
+{Problem No. \thesection}
+{0.5em}
+{}
+
+\titleformat{\subsection}[runin]
+  {\normalfont\Large\bfseries}{(\thesubsection)}{1em}{}
+
+\renewcommand\thesubsection{\roman {subsection}}
+
+\section{}
+\Large{
+    \hspace{1.5em}The given data may be expressed in terms of binomial probability.\\
+
+    \hspace{1.5em}Here,
+
+    \hspace{1.5em}Success = Employed and Failure = Unemployed
+
+    \hspace{1.5em}Probability of success, $ p = 40\;\% = \frac{40}{100} = 0.4$
+
+    \hspace{1.5em}Number of trials, $n = 20$
+    
+    \subsection{}
+    For $x=8$,
+    \begin{eqnarray*}
+        \text{probability of success, } f(x=8)  &=& {n \choose x} p^x (1-p)^{n-x}\hspace{4.5cm}\\
+        &=& {20 \choose 8} 0.4^8\cdot (1-0.4)^{20-8}\\
+        &=& 125970\cdot 0.4^8 \cdot 0.6^{12}\\
+        &=& 0.18 \hspace{1cm}\text{(approx.)}
+    \end{eqnarray*}
+
+    \subsection{}
+    Now,
+
+    \hspace{1.5em}the probability of at least 14 being unemployed is the same as that of at most 
+
+    \hspace{1.5em}(20-14) = 6 being employed.
+
+    \hspace{1.5em}The probability of at most 6 being employed is the sum of the probabilities upto 
+
+    \hspace{1.5em}x=6 from x=0,
+    \begin{eqnarray*}
+        \text{p(at least 14)} &=& \sum_{x=0}^6 {20 \choose x} \cdot (0.4)^x \; (0.6)^{20-x}\hspace{6.5cm}\\
+        &=& {20 \choose 0} \cdot (0.4)^0\cdot(0.6)^{20} + \dots + {20 \choose 6} (0.4)^6\cdot (0.6)^{14}\\
+        &=& 0.25\hspace{1cm}\text{(approx.)}
+    \end{eqnarray*}
+    \hspace{1.5em}The probability of at least 14 people not getting offer is 0.25
+
+    
+}
+\end{document}
+
